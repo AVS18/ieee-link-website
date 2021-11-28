@@ -12,36 +12,36 @@
         <button class="navbar-toggler text-white-bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent" style='font-family:"Baloo 2", cursive;'>
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              {%for item in nav%}
-                  {% if item.drop_nav|length > 0 %}
-                      <li class="nav-item ms-none ms-lg-3 dropdown">
-                          <a class="nav-link" style="color: black;" href="{{item.url}}" data-bs-toggle="dropdown">{{item.name}}</a>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                              {% for key,value in item.sub_nav_item.items %}
-                                  {%if value|length > 0 %}
-                                      <li>
-                                          <a class="dropdown-item" href="{{key.url}}">{{key.name}} <b class="float-end">&raquo;</b></a>
-                                          <ul class="dropdown-menu dropdown-submenu">
-                                              {%for sub_item in value%}
-                                                  <li><a class="dropdown-item" href="{{sub_item.url}}">{{sub_item.name}}</a></li>
-                                              {%endfor%}
-                                          </ul>
-                                      </li>
-                                  {%else%}
-                                  <li><a class="dropdown-item" style="color: black;" href="{{key.url}}">{{key.name}}</a></li>
-                                  {%endif%}
-                              {%endfor%}
-                          </ul>
-                      </li>
-                  {%else%}
-                  <li class="nav-item ms-none ms-lg-3">
-                      <a class="nav-link" style="color: black;" href="{{item.url}}">{{item.name}}</a>
-                  </li>
-                  {%endif%}
-              {%endfor%}
-          </ul>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                {%for item in nav%}
+                    {% if item.drop_nav|length > 0 %}
+                        <li class="nav-item ms-none ms-lg-3 dropdown">
+                            <a class="nav-link" href="{{item.url}}" data-bs-toggle="dropdown">{{item.name}}</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                {% for key,value in item.sub_nav_item.items %}
+                                    {%if value|length > 0 %}
+                                        <li>
+                                            <a class="dropdown-item" href="{{key.url}}">{{key.name}} <b class="float-end">&raquo;</b></a>
+                                            <ul class="dropdown-menu dropdown-submenu">
+                                                {%for sub_item in value%}
+                                                    <li><a class="dropdown-item" href="{{sub_item.url}}">{{sub_item.name}}</a></li>
+                                                {%endfor%}
+                                            </ul>
+                                        </li>
+                                    {%else%}
+                                    <li><a class="dropdown-item" href="{{key.url}}">{{key.name}}</a></li>
+                                    {%endif%}
+                                {%endfor%}
+                            </ul>
+                        </li>
+                    {%else%}
+                    <li class="nav-item ms-none ms-lg-3">
+                        <a class="nav-link" href="{{item.url}}">{{item.name}}</a>
+                    </li>
+                    {%endif%}
+                {%endfor%}
+            </ul>
         </div>
       </div>
     </nav>

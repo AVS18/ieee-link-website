@@ -1,0 +1,489 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://kit.fontawesome.com/a0a6616d20.js" crossorigin="anonymous"></script>
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+      <link href="{% static 'css/home.css' %}" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+      <title>IEEE Link</title>
+  </head>
+  <body>
+    <div class="social-icons d-none d-lg-flex">
+      <a href="https://www.facebook.com/ieeelink/" target="_blank"><img src="{% static 'images/home/facebook.png' %}" alt=""></a>
+      <a href="https://twitter.com/IEEEKerala" target="_blank"><img src="{% static 'images/home/twitter.png' %}" alt=""></a>
+      <a href="https://www.instagram.com/ieeelink/" target="_blank"><img src="{% static 'images/home/instagram.png' %}" alt=""></a>
+      <a href="https://www.linkedin.com/company/ieeelink/" target="_blank"><img src="{% static 'images/home/linkedin.png' %}" alt=""></a>
+      <p class="profile-name">ieee-link</p>
+    </div>
+
+    <!-- Header -->
+    <section class="header_landing">
+      <h1 class="news">IEEE</h1>
+      <h1 class="news2">LINK</h1>
+    <header id="header">
+      <nav class="navbar navbar-reverse navbar-expand-lg flex-row">
+        <div class="container-lg">
+          <a class="navbar-brand" href="#">
+            <img src="{% static 'images/home/link_dark.png' %}" alt="">
+          </a>
+          <button class="navbar-toggler text-white-bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                {%for item in nav%}
+                    {% if item.drop_nav|length > 0 %}
+                        <li class="nav-item ms-none ms-lg-3 dropdown">
+                            <a class="nav-link" href="{{item.url}}" data-bs-toggle="dropdown">{{item.name}}</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                {% for key,value in item.sub_nav_item.items %}
+                                    {%if value|length > 0 %}
+                                        <li>
+                                            <a class="dropdown-item" href="{{key.url}}">{{key.name}} <b class="float-end">&raquo;</b></a>
+                                            <ul class="dropdown-menu dropdown-submenu">
+                                                {%for sub_item in value%}
+                                                    <li><a class="dropdown-item" href="{{sub_item.url}}">{{sub_item.name}}</a></li>
+                                                {%endfor%}
+                                            </ul>
+                                        </li>
+                                    {%else%}
+                                    <li><a class="dropdown-item" href="{{key.url}}">{{key.name}}</a></li>
+                                    {%endif%}
+                                {%endfor%}
+                            </ul>
+                        </li>
+                    {%else%}
+                    <li class="nav-item ms-none ms-lg-3">
+                        <a class="nav-link" href="{{item.url}}">{{item.name}}</a>
+                    </li>
+                    {%endif%}
+                {%endfor%}
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Landing -->
+
+    <section class="landing mb-0">
+      <div class="container-fluid">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-interval="100">
+          <div class="carousel-indicators">
+            <button type="button" style="border-radius:50%;width:15px;height:15px;background-color:blue;" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" style="border-radius:50%;width:15px;height:15px;" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          </div>
+          <div class="carousel-inner carousel-inner1">
+            <div class="carousel-item active">
+              <div class="container">
+                <div class="landing-item landing-item1">
+                  <div>
+                    <h2>Belong Where</h2>
+                    <h2 class="fw-bold">The Leaders Thrive</h2>
+                    <hr class="hrule">
+                    <p>The Joy of Volunteering</p>
+                    <button class="btn btn-primary explore-btn">Explore</button>
+                  </div>
+                  <div class="align">
+                    <img src="{% static 'images/home/hands_1.png' %}" class="hands1" alt="...">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="landing-item landing-item2">
+                  <div>
+                    <h2 class="mb-3">Empowering <span class="fw-bold">Your<br class="d-block d-md-none"> Future</span></h2>
+                    <hr class="hrule">
+                    <p>The Joy of Volunteering</p>
+                    <button class="btn btn-primary explore-btn">Explore</button>
+                  </div>
+                  <div class="align">
+                    <img src="{% static 'images/home/hands_2.png' %}" class="hands2" alt="...">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </section>
+
+    <!-- About Us -->
+
+    <section class="about-section mt-0 mb-0">
+      <h1 class="news">ABOUT</h1>
+      <h1 class="news2">IEEE LINK</h1>
+      <div class="container">
+        <div class="d-lg-flex justify-content-between align-items-center" style="position: relative;">
+          <div>
+            <h1 class="text-center mb-5 about-us-head">About Us</h1>
+            <h2 class="mb-4 about-us-head">We are the Largest Student Activities Group in the world</h2>
+            <p class=""><span class="fw-bold">LINK (Local Integrated Network of Kerala IEEE Students)</span> is an innovative concept that originated in IEEE Kerala Section in India, aimed at networking student branches in an effective way, thereby increasing the value in IEEE Student membership. LINK was formally inaugurated by past IEEE President Mr. Cleon Anderson in January 2005.</p> 
+  
+            <p class="">Since its inception LINK has achieved tremendous results, causing an exponential increase in student branches and student activities in IEEE Kerala Section over the years.</p>
+              
+            <p class="">The model of link was adopted by IEEE Region 10 as R10 GINI (Global Integrated Network of IEEE Students).  </p>
+          </div>
+          <div class="img-div">
+            <img class="about-us-img" src="{% static 'images/home/about_2.png' %}"/>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- Video Section -->
+
+    <section class="video-section d-flex flex-column align-items-center justify-content-center">
+      <h1 class="news">IEEE LINK</h1>
+      <h1 class="news2">ABOUT US</h1>
+      <div class="p-5 video-div">
+        <iframe class="video-player" src="https://www.youtube.com/embed/qfd_N8UG8Qg" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <p class="text-center mt-5 video-caption fw-bold"><img src="{% static 'images/home/quote1.png' %}" alt="">  Ensemble the Student Branches and spread the value of IEEE through out the geographical span.<img src="{% static 'images/home/quote2.png' %}" alt=""></p>
+    </section>
+
+
+    <!-- Awards -->
+
+    <section class="awards">
+        <h1 class="news">IEEE</h1>
+        <h1 class="news2">LINK</h1>
+        <div class="container">
+            <center><h2 class="fw-bold">LINK Ensembles the Student Branches & spread the value of IEEE through out the geographical span.</h2></center><br/>
+            <div class="row cards align-items-center">
+            <div class="col-md">
+                <div class="card award-card">
+                <div class="card-body text-center">
+                    <img src="{% static 'images/home/Graduation Cap.png' %}" class="card-image" alt="">
+                    <h5 class="card-title fw-bold">Student Branches</h5>
+                    <p class="card-text">There are thousands of IEEE Student Branches throughout the world and likely one near you. It’s your connection to local professionals, academics and the IEEE organization at a large scale.</p>
+                </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="card award-card">
+                <div class="card-body text-center">
+                    <img src="{% static 'images/home/Trophy.png' %}" class="card-image" alt="">
+                    <h5 class="card-title fw-bold">Funds & Awards</h5>
+                    <p class="card-text">Being an IEEE Student member has its perks. You’ll have access to funds including travel grants, scholarships, awards and much more! All to support your advancement and efforts to the next level.</p>
+                </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="card award-card">
+                <div class="card-body text-center">
+                    <div class="card-image-outer">
+                    <img src="{% static 'images/home/Admission.png' %}" class="card-image"  alt="">
+                    </div>
+                    <h5 class="card-title fw-bold">Events</h5>
+                    <p class="card-text">IEEE hosts events all year and all around the globe on topics that will surely interest you. In addition, IEEE Students hosts competitions that offer the opportunity to develop professionally.</p>
+                </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="card award-card">
+                <div class="card-body text-center">
+                    <img src="{% static 'images/home/Handshake Light Skin Tone.png' %}" alt="">
+                    <h5 class="card-title fw-bold">Mentoring Support</h5>
+                    <p class="card-text text-justify">IEEE members share their expertise with IEEE Students in the interest of the students upward mobility within their chose field. Educational tools are also available to IEEE Student members.</p>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <br/>
+    </section>
+    <div class="container">
+        <div>
+            <center><h2 class="fw-bold">Statistics</h2></center><br/>
+            <div class="row cards align-items-center">
+                <div class="col-md">
+                    <div class="card award-card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold">Student Members</h5>
+                        <p class="card-text"><h1>9,400+</h1></p>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="card award-card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold">Student Branches</h5>
+                        <p class="card-text"><h1>108+</h1></p>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="card award-card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold">Events</h5>
+                        <p class="card-text"><h1>2500+</h1></p>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="card award-card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold">Awards</h5>
+                        <p class="card-text text-justify"><h1>350+</h1></p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Societies -->
+        <section class="societies-section d-flex align-items-center justify-content-center mt-5">
+        <h1 class="news">OUR</h1>
+        <h1 class="news2">SOCIETIES</h1>
+        <div class="container">
+            <div class="row">
+            <div class="col-md">
+                <h2 class="fw-bold">Our Societies</h2>
+                <h3 class="fw-bold">Get involved with our dynamic societies</h3>
+                <p>IEEE Society members stay technically current, network with colleagues locally and abroad, and collaborate on research and projects with leading experts all while taking advantage of specialized opportunities.<br/>
+                <br>IEEE develops communities around particular technology challenges or cutting-edge subject areas. Their areas of coverage may be general in nature, which include multi-disciplinary topics or emerging concepts. Discover which Technical Community best matches your ​interests.</p>
+            </div>
+            <div class="col-md">
+                <div class="row mb-3">
+                <div class="col">
+                    <div class="society-image-outer-box">
+                    <div class="society-image-box">
+                        <img src="{% static 'images/home/computer.png' %}" class="society-image" alt="">
+                    </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="society-image-outer-box">
+                    <div class="society-image-box">
+                        <img src="{% static 'images/home/pes.png' %}" class="society-image" alt="">
+                    </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="society-image-outer-box">
+                    <div class="society-image-box">
+                        <img src="{% static 'images/home/comsoc.png' %}" class="society-image" alt="">
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <div class="row">
+                <div class="col">
+                    <div class="society-image-outer-box">
+                    <div class="society-image-box">
+                        <img src="{% static 'images/home/wie.png' %}" class="society-image" alt="">
+                    </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="society-image-outer-box">
+                    <div class="society-image-box">
+                        <img src="{% static 'images/home/3sum.png' %}" class="society-image" alt="">
+                    </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="society-image-outer-box">
+                    <div class="society-image-box">
+                        <img src="{% static 'images/home/robotics.png' %}" class="society-image" alt="">
+                    </div>
+                    </div>
+                </div>
+                </div> 
+            </div>
+            </div>
+        </div>
+        </section>
+
+
+    <!-- Featured Events -->
+
+    <section class="featured-events-section mt-5">
+      <h1 class="news">PRODIGIOUS</h1>
+      <h1 class="news2">EVENTS</h1>
+      <div class="container">
+        <div class="text-center mb-3">
+          <h4>Featured Events</h4>
+          <h2 class="fw-bolder">Prodigious Events of LINK</h2>
+          <br>
+        </div>
+      </div>
+     
+<div id="eventCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" style="border-radius:50%;width:15px;height:15px;background-color:blue;" data-bs-target="#eventCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    {% for i in featured_length %}
+    <button type="button" style="border-radius:50%;width:15px;height:15px;background-color:blue;" data-bs-target="#eventCarousel" data-bs-slide-to="{{i}}" aria-label="Slide 2"></button>
+    {%endfor%}
+  </div>
+  <div class="carousel-inner">
+    <div class="container">
+        {% for item in featured %}
+        {% if forloop.counter0 == 0 %}
+        <div class="carousel-item carousel-item1 active">
+        {%else%}
+        <div class="carousel-item carousel-item1">
+        {%endif%}
+            <div class="">
+            <div class="card carousel-card">
+                <div class="card-body d-flex justify-content-between overflow-ellipsis">
+                <div class="carousel-card-content overflow-ellipsis">
+                    <h5 class="card-title">{{item.name}}</h5>
+                    <p class="card-text overflow-ellipsis" style="word-break: break-all;">{{item.information}}</p>
+                </div>
+                <h1 class="carousel-card-number">{{item.id}}</h1>
+                </div>
+            </div>
+            <div class="carousel-event-image-div">
+                <img class="carousel-event-image mt-5" src="{{item.poster.url}}" alt="">
+            </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+  </div>
+</div>
+      
+
+
+    </section>
+
+    <!-- What's next -->
+
+    <section class="whats-next-section">
+      <h1 class="news">LINK LATEST</h1>
+      <h1 class="news2">UPDATES</h1>
+      <div class="d-flex flex-column align-items-center justify-content-center">
+        <div class="text-center">
+          <h2 class="mb-2">Wondering What's Next?</h2>
+          <h2 class="mb-5 fw-bolder">Latest Updates</h2>
+        </div>
+        <div>
+            <div class="container mt-5">
+                <div class="row cards align-items-center">
+                    {% for item in posts %}
+                    <div class="col-sm">
+                        <div class="card award-card">
+                        <div class="card-body text-center">
+                            <div class="mb-3 next-image-div">
+                            <img src="{{item.image.url}}" class="next-image" alt="">
+                            </div>
+                            <h5 class="card-title">{{item.name}}</h5>
+                            <a href="/post/{{item.connector}}" class="text-decoration-none">Know More</a>
+                        </div>
+                        </div>
+                    </div>
+                    {%endfor%}
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- NewsLetter -->
+
+    <section class="newsletter-section">
+        <h1 class="news">IEEE LINK</h1>
+        <h1 class="news2">NEWS LETTER</h1>
+        <div class="container">
+          <div class="text-center mb-3">
+            <h2>Subscribe and never miss and update</h2>
+            <h3 class="fw-bolder">IEEE LINK NEWSLETTER</h3> 
+          </div>
+          <div class="d-flex flex-row align-items-center justify-content-around">
+            <div>
+              <img src="{% static 'images/home/newsletter.png' %}" class="newsletter-img d-none d-lg-block" alt="">
+            </div>
+            <div class="form-box me-none me-md-5">
+                <p class="text-center mb-2 fw-bold">Sign up for our latest news & articles.</p>
+                <p class="text-center mb-4">We won't give you spam mails</p>
+              <form action="/subscribe" method="POST" class="d-flex flex-column align-items-center justify-content-center">
+                  {%csrf_token%}
+                <input type="email" name="email" placeholder="Your Email" class="email-input mb-3" required>
+                <button type="submit" class="subscribe-button fw-bold">Subscribe</button>
+              </form>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md">
+            <img src="{% static 'images/home/ieee_dark.png' %}" class="ieee-logo" alt="ieee-logo">
+          </div>
+          <div class="col-md">
+            <h5>Become an IEEE Member Today.</h5>
+            <h6>Join a community of over 420,000 technology and engineering professionals.</h6>
+          </div>
+          <div class="col-md d-flex align-items-center justify-content-center justify-content-md-end">
+            <button class="btn btn-dark">Join Now</button>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col">
+            <p class="fw-bold">Contact</p>
+            <p><img src="{% static 'images/home/place.png' %}" alt=""> Pulimoodu, Thiruvananthapuram, Kerala</p>
+            <p><img src="{% static 'images/home/telephone.png' %}" alt=""> 0471 247 3515</p>
+            <p><img src="{% static 'images/home/mail.png' %}" alt=""> team@ieee-link.org</p>
+          </div>
+
+          <div class="col">
+            <p class="fw-bold">Useful Links</p>
+            <div class="row">
+              <div class="col">
+                <ul class="useful-links">
+                  <li><a class="text-decoration-none text-dark" href="#">IEEE Students</a></li>
+                  <li><a class="text-decoration-none text-dark" href="#">IEEE Standards</a></li>
+                  <li><a class="text-decoration-none text-dark" href="#">IEEE Spectrum</a></li>
+                </ul>
+              </div>
+              <div class="col">
+                <ul class="useful-links">
+                  <li><a class="text-decoration-none text-dark" href="#">IEEE Kerala Section</a></li>
+                  <li><a class="text-decoration-none text-dark" href="#">IEEE Region 10</a></li>
+                  <li><a class="text-decoration-none text-dark" href="#">IEEE R10 SAC</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center justify-content-center">
+          <div class="d-flex align-items-center">
+            <a class="me-3" href="https://www.facebook.com/ieeelink/" target="_blank"><img src="{% static 'images/home/facebook.png' %}" alt=""></a>
+            <a class="me-3" href="https://twitter.com/IEEEKerala" target="_blank"><img src="{% static 'images/home/twitter.png' %}" alt=""></a>
+            <a class="me-3" href="https://www.instagram.com/ieeelink/" target="_blank"><img src="{% static 'images/home/instagram.png' %}" alt=""></a>
+            <a class="me-3" href="https://www.linkedin.com/company/ieeelink/" target="_blank"><img src="{% static 'images/home/linkedin.png' %}" alt=""></a>
+          </div>
+        </div>
+        <hr>
+        <div class="text-center">
+           <span class="fw-bold">Copyright ©2021 IEEE Kerala Section</span> <br>
+            Use of this website signifies your agreement to the IEEE Terms and Conditions.</p>
+        </div>
+        
+          
+        </div>
+      </div>
+    </footer>
+      <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>

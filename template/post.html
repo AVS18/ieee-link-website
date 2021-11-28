@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+{%load static%}
+{% include "nav.html" %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEEE LINK</title>
+    <link rel="stylesheet" href="{% static 'css/post.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+        rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="{% static 'js/observer.js' %}" defer></script>
+    <script src="https://kit.fontawesome.com/2ceb233dee.js" crossorigin="anonymous" defer></script>
+</head>
+
+<body>
+    {%block content%}
+    {%endblock%}
+    <div class="social-icons d-none d-lg-flex">
+        <a href="https://www.facebook.com/ieeelink/" target="_blank"><img src="{% static 'images/home/facebook.png' %}" alt=""></a>
+        <a href="https://twitter.com/IEEEKerala" target="_blank"><img src="{% static 'images/home/twitter.png' %}" alt=""></a>
+        <a href="https://www.instagram.com/ieeelink/" target="_blank"><img src="{% static 'images/home/instagram.png' %}" alt=""></a>
+        <a href="https://www.linkedin.com/company/ieeelink/" target="_blank"><img src="{% static 'images/home/linkedin.png' %}" alt=""></a>
+        <p class="profile-name">ieee-link</p>
+    </div>
+    <section>
+    <div class="container">
+        <h1 class="news">IEEE LINK</h1>
+        <h1 class="news2">IEEE LINK</h1>
+        <div class="left-col">
+            <div class="website">
+                {% if data.image != "" %}
+                <img src="{{data.image.url}}" alt="">
+                {%endif%}
+                <div class="bottom">
+                    <div class="info">
+                        <i class="fas fa-clock"></i>
+                        <span>{{data.added_date}}</span>
+                    </div>
+                    <div class="info">
+                        <i class="fas fa-folder"></i>
+                        <span>
+                        {%for item in data.category.all %}
+                        &nbsp;<a href="/category/{{item.name}}">{{item.name}}</a>
+                        {%endfor%}
+                        </span>
+                    </div>
+                    <div class="info">
+                        <i class="fas fa-folder"></i>
+                        <span>
+                            {%for item in data.tags.all %}
+                            &nbsp;<a href="/tag/{{item.name}}">{{item.name}}</a>
+                            {%endfor%}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="container" style="font-family: 'Baloo 2';">
+                <p class="head">{{data.name|safe}}</p>
+                <p style="color:black">{{data.long_content|safe}}</p>
+            </div>
+        </div>
+        <div class="right-col" style="position:sticky;overflow: visible;">
+            <div class="c-list one categories">
+                <div class="title">categories</div>
+                <ul class="list one">
+                    {%for item in category %}
+                    <li><a href="/category/{{item.name}}">{{item.display_name}}</a></li>
+                    {%endfor%}
+                </ul>
+            </div>
+            <div class="c-list three categories">
+                <div class="title">popular tags</div>
+                <ul class="list">
+                    {%for item in tag %}
+                    <li><a href="/tag/{{item.name}}" >{{item.display_name}}</a></li>
+                    {%endfor%}
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    </section>
+    {% include "footer.html" %}
+</body>
+
+</html>

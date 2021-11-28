@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+{%load static%}
+{% include "nav.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+        rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="{% static 'css/office.css' %}" rel="stylesheet">
+    <title>IEEE LINK</title>
+</head>
+<body>
+    {%block content%}
+    {%endblock%}
+    <section id="team" class="team section-bg">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                <br>
+                <h5>OFFICE BEARERS {{data.year}}</h5>
+            </div>
+            <div class="row">
+                <!-- ======= Team Section ======= -->
+                <section id="vsacteam" class="team section-bg">
+                    <div class="container" data-aos="fade-up">
+
+                        <div class="section-title">
+                            <h2>SAC / VSAC</h2>
+                        </div>
+
+                        <div class="row">
+                            {%for item in data.sac_vsac.all %}
+                            <div class=" col-md-3 col-sm-6 d-flex align-items-stretch" data-aos="fade-up"
+                                data-aos-delay="100">
+                                <div class="card">
+                                    <div class="card-img">
+                                        <img src="{{item.image.url}}" class="img-fluid" alt="">
+                                        <div class="social">
+                                            {% if item.linkedin %}
+                                            <a href="{{item.linkedin}}"><i class="fa fa-linkedin-square"></i></a>
+                                            {%endif%}
+                                            {% if item.facebook %}
+                                            <a href="{{item.facebook}}"><i class="fa fa-facebook-square"></i></a>
+                                            {%endif%}
+                                            {% if item.twitter%}
+                                            <a href="{{item.twitter}}"><i class="fa fa-twitter-square"></i></a>
+                                            {%endif%}
+                                            {% if item.instagram %}
+                                            <a href="{{item.instagram}}"><i class="fa fa-instagram"></i></a>
+                                            {%endif%}
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h4 class="card-title">{{item.name}}</h4>
+                                        <span>{{item.position}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            {%endfor%}
+                        </div>
+                    </div>
+                </section><!-- End Team Section -->
+                <section id="linkteam" class="team section-bg">
+                    <div class="container" data-aos="fade-up">
+
+                        <div class="section-title">
+                            <h2>LINK TEAM</h2>
+                        </div>
+
+                        <div class="row justify-content-center">
+                            {%for item in data.link_team.all %}
+                            <div class=" col-md-3 col-sm-6 d-flex align-items-stretch" data-aos="fade-up"
+                                data-aos-delay="100">
+                                <div class="card">
+                                    <div class="card-img">
+                                        <img src="{{item.image.url}}" class="img-fluid" alt="">
+                                        <div class="social">
+                                            {% if item.linkedin  %}
+                                            <a href="{{item.linkedin}}"><i class="fa fa-linkedin-square"></i></a>
+                                            {%endif%}
+                                            {% if item.facebook  %}
+                                            <a href="{{item.facebook}}"><i class="fa fa-facebook-square"></i></a>
+                                            {%endif%}
+                                            {% if item.twitter  %}
+                                            <a href="{{item.twitter}}"><i class="fa fa-twitter-square"></i></a>
+                                            {%endif%}
+                                            {% if item.instagram  %}
+                                            <a href="{{item.instagram}}"><i class="fa fa-instagram"></i></a>
+                                            {%endif%}
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h4 class="card-title">{{item.name}}</h4>
+                                        <span>{{item.position}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            {%endfor%}
+                        </div>
+                    </div>
+                </section>
+                <section id="SRs" class="team section-bg">
+                    <div class="container" data-aos="fade-up">
+
+                        <div class="section-title">
+                            <h2>Kochi Hub</h2>
+                        </div>
+
+                        <div class="row justify-content-center">
+                            {%for item in data.kochi.all %}
+                            <div class=" col-md-3 col-sm-6 d-flex align-items-stretch" data-aos="fade-up"
+                                data-aos-delay="100">
+                                <div class="card">
+                                    <div class="card-img">
+                                        <img src="{{item.image.url}}" class="img-fluid" alt="">
+                                        <div class="social">
+                                            {% if item.linkedin  %}
+                                            <a href="{{item.linkedin}}"><i class="fa fa-linkedin-square"></i></a>
+                                            {%endif%}
+                                            {% if item.facebook  %}
+                                            <a href="{{item.facebook}}"><i class="fa fa-facebook-square"></i></a>
+                                            {%endif%}
+                                            {% if item.twitter  %}
+                                            <a href="{{item.twitter}}"><i class="fa fa-twitter-square"></i></a>
+                                            {%endif%}
+                                            {% if item.instagram  %}
+                                            <a href="{{item.instagram}}"><i class="fa fa-instagram"></i></a>
+                                            {%endif%}
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h4 class="card-title">{{item.name}}</h4>
+                                        <span>{{item.position}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            {%endfor%}                            
+                        </div>
+                    </div>
+                </section>
+                <section id="travancore" class="team section-bg">
+                    <div class="container" data-aos="fade-up">
+
+                        <div class="section-title">
+                            <h2>Travancore Hub</h2>
+                        </div>
+
+                        <div class="row justify-content-center">
+                            {%for item in data.travancore.all %}
+                            <div class=" col-md-3 col-sm-6 d-flex align-items-stretch" data-aos="fade-up"
+                                data-aos-delay="100">
+                                <div class="card">
+                                    <div class="card-img">
+                                        <img src="{{item.image.url}}" class="img-fluid" alt="">
+                                        <div class="social">
+                                            {% if item.linkedin  %}
+                                            <a href="{{item.linkedin}}"><i class="fa fa-linkedin-square"></i></a>
+                                            {%endif%}
+                                            {% if item.facebook  %}
+                                            <a href="{{item.facebook}}"><i class="fa fa-facebook-square"></i></a>
+                                            {%endif%}
+                                            {% if item.twitter  %}
+                                            <a href="{{item.twitter}}"><i class="fa fa-twitter-square"></i></a>
+                                            {%endif%}
+                                            {% if item.instagram  %}
+                                            <a href="{{item.instagram}}"><i class="fa fa-instagram"></i></a>
+                                            {%endif%}
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h4 class="card-title">{{item.name}}</h4>
+                                        <span>{{item.position}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            {%endfor%}                            
+                        </div>
+                    </div>
+                </section>
+                <section id="malabar" class="team section-bg">
+                    <div class="container" data-aos="fade-up">
+                        <div class="section-title">
+                            <h2>Malabar Hub</h2>
+                        </div>
+
+                        <div class="row justify-content-center">
+                            {%for item in data.malabar.all %}
+                            <div class=" col-md-3 col-sm-6 d-flex align-items-stretch" data-aos="fade-up"
+                                data-aos-delay="100">
+                                <div class="card">
+                                    <div class="card-img">
+                                        <img src="{{item.image.url}}" class="img-fluid" alt="">
+                                        <div class="social">
+                                            {% if item.linkedin  %}
+                                            <a href="{{item.linkedin}}"><i class="fa fa-linkedin-square"></i></a>
+                                            {%endif%}
+                                            {% if item.facebook  %}
+                                            <a href="{{item.facebook}}"><i class="fa fa-facebook-square"></i></a>
+                                            {%endif%}
+                                            {% if item.twitter  %}
+                                            <a href="{{item.twitter}}"><i class="fa fa-twitter-square"></i></a>
+                                            {%endif%}
+                                            {% if item.instagram  %}
+                                            <a href="{{item.instagram}}"><i class="fa fa-instagram"></i></a>
+                                            {%endif%}
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h4 class="card-title">{{item.name}}</h4>
+                                        <span>{{item.position}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            {%endfor%}                            
+                        </div>
+                    </div>
+                </section>
+                <section id="society_sr" class="team section-bg">
+                    <div class="container" data-aos="fade-up">
+
+                        <div class="section-title">
+                            <h2>Society Representatives</h2>
+                        </div>
+
+                        <div class="row justify-content-center">
+                            {%for item in data.society_sr.all %}
+                            <div class=" col-md-3 col-sm-6 d-flex align-items-stretch" data-aos="fade-up"
+                                data-aos-delay="100">
+                                <div class="card">
+                                    <div class="card-img">
+                                        <img src="{{item.image.url}}" class="img-fluid" alt="">
+                                        <div class="social">
+                                            {% if item.linkedin  %}
+                                            <a href="{{item.linkedin}}"><i class="fa fa-linkedin-square"></i></a>
+                                            {%endif%}
+                                            {% if item.facebook  %}
+                                            <a href="{{item.facebook}}"><i class="fa fa-facebook-square"></i></a>
+                                            {%endif%}
+                                            {% if item.twitter  %}
+                                            <a href="{{item.twitter}}"><i class="fa fa-twitter-square"></i></a>
+                                            {%endif%}
+                                            {% if item.instagram  %}
+                                            <a href="{{item.instagram}}"><i class="fa fa-instagram"></i></a>
+                                            {%endif%}
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h4 class="card-title">{{item.name}}</h4>
+                                        <span>{{item.position}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            {%endfor%}                             
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section><!-- End Team Section -->
+</body>
+</html>

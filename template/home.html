@@ -17,7 +17,7 @@
       <title>IEEE Link</title>
   </head>
   <body>
-    <div class="social-icons d-none d-lg-flex">
+    <div class="social-icons d-none d-xl-flex">
       <a href="https://www.facebook.com/ieeelink/" target="_blank"><img src="{% static 'images/home/facebook.png' %}" alt=""></a>
       <a href="https://twitter.com/IEEEKerala" target="_blank"><img src="{% static 'images/home/twitter.png' %}" alt=""></a>
       <a href="https://www.instagram.com/ieeelink/" target="_blank"><img src="{% static 'images/home/instagram.png' %}" alt=""></a>
@@ -84,7 +84,7 @@
           </div>
           <div class="carousel-inner carousel-inner1">
             <div class="carousel-item active">
-              <div class="container">
+              <div class="container container-item">
                 <div class="landing-item landing-item1">
                   <div>
                     <h2>Belong Where</h2>
@@ -93,9 +93,7 @@
                     <p>The Joy of Volunteering</p>
                     <button class="btn btn-primary explore-btn">Explore</button>
                   </div>
-                  <div class="align">
-                    <img src="{% static 'images/home/hands_1.png' %}" class="hands1" alt="...">
-                  </div>
+                  <img style="border-radius:20px;"src="{% static 'images/home/group.jpeg' %}" class="hands1" alt="...">
                 </div>
               </div>
             </div>
@@ -103,14 +101,14 @@
               <div class="container">
                 <div class="landing-item landing-item2">
                   <div>
-                    <h2 class="mb-3">Empowering <span class="fw-bold">Your<br class="d-block d-md-none"> Future</span></h2>
+                    {% comment %} <h2 class="mb-3">Empowering <span class="fw-bold">Your<br class="d-block d-md-none mt-3"> Future</span></h2> {% endcomment %}
+                    <h2 class="d-block d-md-inline">Empowering</h2>
+                    <h2 class="fw-bold d-block d-md-inline">Your Future</h2>
                     <hr class="hrule">
                     <p>The Joy of Volunteering</p>
                     <button class="btn btn-primary explore-btn">Explore</button>
                   </div>
-                  <div class="align">
-                    <img src="{% static 'images/home/hands_2.png' %}" class="hands2" alt="...">
-                  </div>
+                    <img style="border-radius:20px;"src="{% static 'images/home/groupnew.png' %}" class="hands2" alt="...">
                 </div>
               </div>
             </div>
@@ -152,17 +150,17 @@
       <div class="p-5 video-div">
         <iframe class="video-player" src="https://www.youtube.com/embed/qfd_N8UG8Qg" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
-      <p class="text-center mt-5 video-caption fw-bold"><img src="{% static 'images/home/quote1.png' %}" alt="">  Ensemble the Student Branches and spread the value of IEEE through out the geographical span.<img src="{% static 'images/home/quote2.png' %}" alt=""></p>
+      <h4 class="text-center mt-5 video-caption fw-bold"><img src="{% static 'images/home/quote1.png' %}" alt="">  Ensemble the Student Branches and spread the value of IEEE through out the geographical span.<img src="{% static 'images/home/quote2.png' %}" alt=""></h4>
     </section>
 
 
     <!-- Awards -->
 
-    <section class="awards">
+    <section class="awards mb-5 mt-5">
         <h1 class="news">IEEE</h1>
         <h1 class="news2">LINK</h1>
         <div class="container">
-            <center><h2 class="fw-bold">LINK Ensembles the Student Branches & spread the value of IEEE through out the geographical span.</h2></center><br/>
+            {% comment %} <center><h2 class="fw-bold">LINK Ensembles the Student Branches & spread the value of IEEE through out the geographical span.</h2></center><br/> {% endcomment %}
             <div class="row cards align-items-center">
             <div class="col-md">
                 <div class="card award-card">
@@ -206,9 +204,9 @@
         </div>
         <br/>
     </section>
-    <div class="container">
+    <div class="container mt-5 mb-5">
         <div>
-            <center><h2 class="fw-bold">Statistics</h2></center><br/>
+            <center><h2 class="fw-bold mb-3">Statistics</h2></center><br/>
             <div class="row cards align-items-center">
                 <div class="col-md">
                     <div class="card award-card">
@@ -248,7 +246,7 @@
 
         <!-- Societies -->
         <section class="societies-section d-flex align-items-center justify-content-center mt-5">
-        <h1 class="news">OUR</h1>
+        <h1 class="news mt-5">OUR</h1>
         <h1 class="news2">SOCIETIES</h1>
         <div class="container">
             <div class="row">
@@ -313,7 +311,7 @@
 
     <!-- Featured Events -->
 
-    <section class="featured-events-section mt-5">
+    <section class="featured-events-section mt-5 mb-5">
       <h1 class="news">PRODIGIOUS</h1>
       <h1 class="news2">EVENTS</h1>
       <div class="container">
@@ -340,18 +338,18 @@
         {%else%}
         <div class="carousel-item carousel-item1">
         {%endif%}
-            <div class="">
+            <div class="carousel-cards">
             <div class="card carousel-card">
                 <div class="card-body d-flex justify-content-between overflow-ellipsis">
-                <div class="carousel-card-content overflow-ellipsis">
+                <div class="carousel-card-content">
                     <h5 class="card-title">{{item.name}}</h5>
-                    <p class="card-text overflow-ellipsis" style="word-break: break-all;">{{item.information}}</p>
+                    <p class="card-text carousel-card-text" style="word-break: break-all;">{{item.information}}</p>
                 </div>
                 <h1 class="carousel-card-number">{{item.id}}</h1>
                 </div>
             </div>
             <div class="carousel-event-image-div">
-                <img class="carousel-event-image mt-5" src="{{item.poster.url}}" alt="">
+                <img class="carousel-event-image" src="{{item.poster.url}}" alt="">
             </div>
             </div>
         </div>
@@ -366,7 +364,7 @@
 
     <!-- What's next -->
 
-    <section class="whats-next-section">
+    <section class="whats-next-section mb-5">
       <h1 class="news">LINK LATEST</h1>
       <h1 class="news2">UPDATES</h1>
       <div class="d-flex flex-column align-items-center justify-content-center">
@@ -399,11 +397,11 @@
 
     <!-- NewsLetter -->
 
-    <section class="newsletter-section">
+    <section class="newsletter-section mt-5 mb-5">
         <h1 class="news">IEEE LINK</h1>
         <h1 class="news2">NEWS LETTER</h1>
         <div class="container">
-          <div class="text-center mb-3">
+          <div class="text-center mt-5 mb-3">
             <h2>Subscribe and never miss and update</h2>
             <h3 class="fw-bolder">IEEE LINK NEWSLETTER</h3> 
           </div>
@@ -481,7 +479,6 @@
             Use of this website signifies your agreement to the IEEE Terms and Conditions.</p>
         </div>
         
-          
         </div>
       </div>
     </footer>

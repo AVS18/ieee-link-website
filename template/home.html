@@ -27,9 +27,6 @@
     </div>
 
     <!-- Header -->
-    <section class="header_landing">
-      <h1 class="news">IEEE</h1>
-      <h1 class="news2">LINK</h1>
     <header id="header">
       <nav class="navbar navbar-reverse navbar-expand-lg flex-row">
         <div class="container-lg">
@@ -74,6 +71,9 @@
       </nav>
     </header>
 
+    <section class="header_landing">
+      <h1 class="news">IEEE LINK</h1>
+      <h1 class="news2">IEEE LINK</h1>
     <!-- Landing -->
 
     <section class="landing mb-0">
@@ -324,6 +324,41 @@
       </div>
 
 
+{% comment %} <div id="eventCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" style="border-radius:50%;width:15px;height:15px;background-color:blue;" data-bs-target="#eventCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    {% for i in featured_length %}
+    <button type="button" style="border-radius:50%;width:15px;height:15px;background-color:blue;" data-bs-target="#eventCarousel" data-bs-slide-to="{{i}}" aria-label="Slide 2"></button>
+    {%endfor%}
+  </div>
+  <div class="carousel-inner">
+    <div class="container">
+        {% for item in featured %}
+        {% if forloop.counter0 == 0 %}
+        <div class="carousel-item carousel-item1 active">
+        {%else%}
+        <div class="carousel-item carousel-item1">
+        {%endif%}
+            <div class="carousel-cards">
+            <div class="card carousel-card">
+                <div class="card-body d-flex justify-content-between overflow-ellipsis">
+                <div class="carousel-card-content">
+                    <h5 class="card-title">{{item.name}}</h5>
+                    <p class="card-text carousel-card-text" style="word-break: break-all;">{{item.information}}</p>
+                </div>
+                <h1 class="carousel-card-number">{{item.id}}</h1>
+                </div>
+            </div>
+            <div class="carousel-event-image-div">
+                <img class="carousel-event-image" src="{{item.poster.url}}" alt="">
+            </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+  </div>
+</div> {% endcomment %}
+      
 <div id="eventCarousel" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" style="border-radius:50%;width:15px;height:15px;background-color:blue;" data-bs-target="#eventCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -358,8 +393,6 @@
     </div>
   </div>
 </div>
-      
-
 
     </section>
 

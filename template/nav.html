@@ -4,7 +4,7 @@
 <script src="{% static 'js/script.js' %}" ></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap">
 <header id="header">
-    <nav class="navbar navbar-reverse navbar-expand-lg flex-row">
+    <nav class="navbar navbar-reverse navbar-expand-lg flex-row ">
       <div class="container-lg">
         <a class="navbar-brand" href="#">
           <img src="{% static 'images/home/link_dark.png' %}" alt="">
@@ -16,13 +16,13 @@
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 {%for item in nav%}
                     {% if item.drop_nav|length > 0 %}
-                        <li class="nav-item ms-none ms-lg-3 dropdown">
-                            <a class="nav-link" href="{{item.url}}" data-bs-toggle="dropdown">{{item.name}}</a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li class="nav-item ms-none ms-lg-3">
+                            <a class="nav-link dropdown" href="{{item.url}}" id="dropdownMenuClickableInside" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">{{item.name}}</a>
+                            <ul class="dropdown-menu">
                                 {% for key,value in item.sub_nav_item.items %}
                                     {%if value|length > 0 %}
                                         <li>
-                                            <a class="dropdown-item" href="{{key.url}}">{{key.name}} <b class="float-end">&raquo;</b></a>
+                                            <a class="dropdown-item" style="cursor:default;">{{key.name}} <b class="float-end">&raquo;</b></a>
                                             <ul class="dropdown-menu dropdown-submenu">
                                                 {%for sub_item in value%}
                                                     <li><a class="dropdown-item" href="{{sub_item.url}}">{{sub_item.name}}</a></li>

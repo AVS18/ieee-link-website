@@ -2,13 +2,7 @@
 *{
     margin:0;
     padding:0;
-    font-family: "Baloo 2", cursive;
 }
-
-nav{
-    font-family: "Raleway",sans-serif;
-}
- 
 
 .container{
     --primary: rgb(122, 64, 230);
@@ -16,6 +10,7 @@ nav{
     --light:rgb(255, 255, 255);
     --icon-color-1 :rgb(172, 128, 255);
 
+    font-family: "Baloo 2", cursive;
     position: relative;
     width:100%;
     

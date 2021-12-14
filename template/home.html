@@ -21,7 +21,7 @@
   <body>
     <div class="social-icons d-none d-xl-flex">
       <a href="https://www.facebook.com/ieeelink/" target="_blank"><img src="{% static 'images/home/facebook.png' %}" alt=""></a>
-      <a href="https://twitter.com/IEEEKerala" target="_blank"><img src="{% static 'images/home/twitter.png' %}" alt=""></a>
+      <a href="https://twitter.com/IEEEKerala" target="_blank"><img src="{% static 'images/home/twitter1.png' %}" style="width:3rem;" alt=""></a>
       <a href="https://www.instagram.com/ieeelink/" target="_blank"><img src="{% static 'images/home/instagram.png' %}" alt=""></a>
       <a href="https://www.linkedin.com/company/ieeelink/" target="_blank"><img src="{% static 'images/home/linkedin.png' %}" alt=""></a>
       <p class="profile-name">ieee-link</p>
@@ -32,7 +32,7 @@
       <nav class="navbar navbar-reverse navbar-expand-lg flex-row">
         <div class="container-lg">
           <a class="navbar-brand" href="#">
-            <img src="{% static 'images/home/link_dark.png' %}" alt="">
+            <img src="{% static 'images/home/ieee_blue.png' %}" class="ieee-logo" alt="">
           </a>
           <button class="navbar-toggler text-white-bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -247,7 +247,7 @@
     </div>
 
         <!-- Societies -->
-        <section class="societies-section d-flex align-items-center justify-content-center mt-5">
+        <section class="societies-section d-flex align-items-center justify-content-center">
         <h1 class="news mt-5">OUR</h1>
         <h1 class="news2">SOCIETIES</h1>
         <div class="container">
@@ -309,53 +309,50 @@
             </div>
         </div>
         </section>
-        
-        <section>
-          <ul class="slider">
-            <li>
-                <img src="{% static "images/home/computer.png" %}" alt="">
-            </li>
-            <li>
-                <img src="{% static "images/home/comsoc.png"%}" alt="">
-            </li>
-            <li>
-                <img src="{% static "images/home/education.png"%}" alt="">
-            </li>
-            <li>
-                <img src="{% static "images/home/emb.png"%}" alt="">
-            </li>
-            <li>
-                <img src="{% static "images/home/grss.png"%}" alt="">
-            </li>
-            <li>
-                <img src="{% static "images/home/ias.png"%}" alt="">
-            </li>
-            <li>
-                <img src="{% static "images/home/ies.png"%}" alt="">
-            </li>
-            <li>
-                <img src="{% static "images/home/mtts.png"%}" alt="">
-            </li>
-            <li>
-                <img src="{% static "images/home/pels.png"%}" alt="">
-            </li>
-            <li>
-                <img src="{% static "images/home/photonics.png"%}" alt="">
-            </li>
-            <li>
-                <img src="{% static "images/home/promotion.png"%}" alt="">
-            </li>
-            <li>
-                <img src="{% static "images/home/sight.png"%}" alt="">
-            </li> 
-            <li>
-                <img src="{% static "images/home/signal.png"%}" alt="">
-            </li>  
-            <li>
-                <img src="{% static "images/home/ssit.png"%}" alt="">
-            </li>  
-          </ul>
+        <section class="other-societies">
+          <div class="container">
+            <ul class="slider">
+              <li>
+                  <img class="slider-img" src="{% static "images/home/antenna.png" %}" alt="">
+              </li>
+              <li>
+                  <img class="slider-img" src="{% static "images/home/cas.png"%}" alt="">
+              </li>
+              <li>
+                  <img class="slider-img" src="{% static "images/home/emb.png"%}" alt="">
+              </li>
+              <li>
+                  <img class="slider-img" src="{% static "images/home/education.png"%}" alt="">
+              </li>
+              <li>
+                  <img class="slider-img" src="{% static "images/home/grss.png"%}" alt="">
+              </li>
+              <li>
+                  <img class="slider-img" src="{% static "images/home/ias.png"%}" alt="">
+              </li>
+              <li>
+                  <img class="slider-img" src="{% static "images/home/mtts.png"%}" alt="">
+              </li>
+              <li>
+                  <img class="slider-img" src="{% static "images/home/photonics.png"%}" alt="">
+              </li>
+              <li>
+                  <img class="slider-img" src="{% static "images/home/promotion.jpeg"%}" alt="">
+              </li>
+              <li>
+                  <img class="slider-img" src="{% static "images/home/sight.png"%}" alt="">
+              </li> 
+              <li>
+                  <img class="slider-img" src="{% static "images/home/signal.png"%}" alt="">
+              </li>  
+              <li>
+                  <img class="slider-img" src="{% static "images/home/ssit.png"%}" alt="">
+              </li>  
+            </ul>
+          </div>
         </section>
+          
+
         
 
 
@@ -423,15 +420,15 @@
       </div>
 
       
-<div id="eventCarousel" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" style="border-radius:50%;width:15px;height:15px;background-color:blue;" data-bs-target="#eventCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    {% for i in featured_length %}
-    <button type="button" style="border-radius:50%;width:15px;height:15px;background-color:blue;" data-bs-target="#eventCarousel" data-bs-slide-to="{{i}}" aria-label="Slide 2"></button>
-    {%endfor%}
-  </div>
-  <div class="carousel-inner container">
-    {% for item in featured %}
+      <div id="eventCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" style="border-radius:50%;width:15px;height:15px;background-color:blue;" data-bs-target="#eventCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            {% for i in featured_length %}
+          <button type="button" style="border-radius:50%;width:15px;height:15px;background-color:blue;" data-bs-target="#eventCarousel" data-bs-slide-to="{{i}}" aria-label="Slide 2"></button>
+            {%endfor%}
+        </div>
+      <div class="carousel-inner container">
+        {% for item in featured %}
         {% if forloop.counter0 == 0 %}
         <div class="carousel-item carousel-parent active">
         {%else%}
@@ -451,9 +448,8 @@
         </div>
         </div>
         {%endfor%}
-  </div>
-</div>
-
+        </div>
+      </div>
     </section>
 
 
@@ -497,7 +493,7 @@
         <h1 class="news">IEEE LINK</h1>
         <h1 class="news2">NEWS LETTER</h1>
         <div class="container">
-          <div class="text-center mt-5 mb-3">
+          <div class="text-center mt-5 mb-3 pb-2">
             <h2>Subscribe and never miss and update</h2>
             <h3 class="fw-bolder">IEEE LINK NEWSLETTER</h3> 
           </div>
@@ -522,7 +518,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md d-flex align-items-center justify-content-center justify-content-md-start">
-            <img src="{% static 'images/home/link_dark.png' %}" class="ieee-logo" alt="ieee-logo">
+            <img src="{% static 'images/home/ieee_blue.png' %}" class="ieee-logo" alt="ieee-logo">
           </div>
           <div class="col-md my-4">
             <h5>Become an IEEE Member Today.</h5>
@@ -535,9 +531,9 @@
         <div class="row mt-5">
           <div class="col">
             <p class="fw-bold">Contact</p>
-            <p><img src="{% static 'images/home/place.png' %}" alt=""> Pulimoodu, Thiruvananthapuram, Kerala</p>
-            <p><img src="{% static 'images/home/telephone.png' %}" alt=""> 0471 247 3515</p>
-            <p><img src="{% static 'images/home/mail.png' %}" alt=""> team@ieee-link.org</p>
+            <p><img src="{% static 'images/home/place.png' %}" style="width:2rem;" alt=""> Pulimoodu, Thiruvananthapuram, Kerala</p>
+            <p><img src="{% static 'images/home/telephone.png' %}" style="width:2rem;" alt=""> 0471 247 3515</p>
+            <p><img src="{% static 'images/home/mail.png' %}" style="width:2rem;" alt=""> team@ieee-link.org</p>
           </div>
 
           <div class="col">
@@ -563,10 +559,10 @@
 
         <div class="d-flex align-items-center justify-content-center">
           <div class="d-flex align-items-center">
-            <a class="me-3" href="https://www.facebook.com/ieeelink/" target="_blank"><img src="{% static 'images/home/facebook.png' %}" alt=""></a>
-            <a class="me-3" href="https://twitter.com/IEEEKerala" target="_blank"><img src="{% static 'images/home/twitter.png' %}" alt=""></a>
-            <a class="me-3" href="https://www.instagram.com/ieeelink/" target="_blank"><img src="{% static 'images/home/instagram.png' %}" alt=""></a>
-            <a class="me-3" href="https://www.linkedin.com/company/ieeelink/" target="_blank"><img src="{% static 'images/home/linkedin.png' %}" alt=""></a>
+            <a class="me-3" href="https://www.facebook.com/ieeelink/" target="_blank"><img src="{% static 'images/home/facebook.png' %}"  style="width:2rem;" alt=""></a>
+            <a class="me-3" href="https://twitter.com/IEEEKerala" target="_blank"><img src="{% static 'images/home/twitter1.png' %}" style="width:2.5rem;" alt=""></a>
+            <a class="me-3" href="https://www.instagram.com/ieeelink/" target="_blank"><img src="{% static 'images/home/instagram.png' %}" style="width:1.75rem;" alt=""></a>
+            <a class="me-3" href="https://www.linkedin.com/company/ieeelink/" target="_blank"><img src="{% static 'images/home/linkedin.png' %}" style="width:2rem;" alt=""></a>
           </div>
         </div>
         <hr>
@@ -588,14 +584,26 @@
             dots: false,
             infinite: true,
             speed: 1000,
+            autoplay:true,
             slidesToShow: 4,
-            slidesToScroll: 4,
+            slidesToScroll: 1,
+            prevArrow:'<i class="fas fa-angle-left left-arrow"></i>',
+            nextArrow:'<i class="fas fa-angle-right right-arrow"></i>',
             responsive: [
+              {
+                breakpoint: 1200,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 1,
+                  infinite: true,
+                  dots: false
+                }
+              },
               {
                 breakpoint: 1024,
                 settings: {
-                  slidesToShow: 3,
-                  slidesToScroll: 3,
+                  slidesToShow: 2,
+                  slidesToScroll: 1,
                   infinite: true,
                   dots: false
                 }
@@ -603,8 +611,8 @@
               {
                 breakpoint: 600,
                 settings: {
-                  slidesToShow: 2,
-                  slidesToScroll: 2
+                  slidesToShow: 1,
+                  slidesToScroll: 1
                 }
               },
               {
